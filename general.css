@@ -1,0 +1,13 @@
+body {	font-family:"Times New Roman", Times, serif; color:#333399; font-size:15px; margin:0;}
+td {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px}
+a:link {  color: #0000FF; text-decoration: none}
+a:visited {  color: #0000FF; text-decoration: none}
+a:hover {  color: #99CCFF; text-decoration: none}
+a.nav:link {  color: #FFFFFF; text-decoration: none}
+a.nav:visited {  color: #FFFFFF; text-decoration: none}
+a.nav:hover {  color: #CCCCCC; text-decoration: none}
+.nav {  height: 20px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF; font-weight: bold}
+h1 {  font-size: 20px; color: #333399; font-weight: normal}
+.red {
+	color: #F00;
+}

@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>About JSS</title>
+<!-- JavaScript Search Engine. Yann LeCun & Florin Nicsa, 2003 -->
+</head>
+<body bgcolor="#f4e8d1" text="#46566e">
+
+<h2>JSS: A few notes for the technically inclined user</h2>
+
+<ul>
+<li>Search words are folded to lowercase and stemmed
+    (e.g. final "s", "ing", and "ed" are removed). 
+<li>Short words with 3 letters or less that are not capitalized in 
+    the original text are not indexed.
+</ul>
+
+<h2>How JSS works</h2>
+
+JSS uses a simple inverted word list. Each individual word that
+appears in the corpus of documents is associated with a list of
+documents (or a list of pages) in which the word apprears.
+<p>
+The inverted word list is encoded in string literals in
+JavaScript source code. With this trick, the search engine
+and the index are entirely contained in a piece of JavaScript
+source code that runs in the browser. For CDROM-based collections,
+this provides a machine-independent search capability without requiring
+any software installation, and without requiring a Java virtual machine.
+For web-based collections, this provides a simple search capability,
+without requiring any server-side software installation, and 
+without consuming any server resources.
+<p>
+JSS is the simplest way to provide search capabilities for CDROM
+document collections, and for Web sites with no access to CGI scripts.
+<p>
+
+<h3>Inverted Word List Encoding</h3>
+
+The inverted word list is encoded in string literals in the JavaScript
+source files. The encoding scheme is as follows. Each document or page
+is identified by an ID number. For each word, a list of ID numbers of
+documents in which the word appears is built. The list is sorted in
+ascending order. This list is transformd into a list of differences
+between successive IDs. This list is then encoded using a very simple
+entropy coder. Small numbers up to 170 are encoded as single-byte
+non-escaped characters taken from the printable ISO-latin set. Larger
+numbers are escaped with the space character and encoded with two
+bytes.
+<p>
+
+<h3>Indexing your Collection with JSS</h3>
+
+There are two ways to index a collection with JSS. The easiest one is
+to use the <a href="http://bib2web.djvuzone.org">Bib2Web</a>
+conversion server. Bib2Web is a free web service that allows you to
+build and index a collection of documents in PostScript, TIFF, PDF, or
+DjVu formats. Bib2Web has the considerable advantage of having a
+built-in OCR engine (which is particularly useful for scanned
+documents). No software installation is required.
+<p>
+The second possibility is to install the <a href="http://jssindex.sf.net">JSS
+package</a>. This package includes the <tt>jssindex</tt> program which
+provides a very simple way to make a document collection searchable.
+<p>
+<tt>jssindex</tt> is a script written in the <a
+href="http://lush.sf.net">Lush</a> language.  To use the JSS indexer
+package, you must first download and install
+<a href="http://lush.sf.net">Lush</a>.  Lush runs on GNU/Linux, Unix,
+and Windows under Cygwin.
+<p>
+To index collections of documents in the DjVu format with JSS, you
+must download and install the <a
+href="http://djvu.sf.net">DjVuLibre</a> package.
+
+</body>
+</html>

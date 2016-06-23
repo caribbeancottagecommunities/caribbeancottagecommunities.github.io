@@ -1,0 +1,3 @@
+var template_head_string='<body bgcolor="#f4e8d1" text="#000000">\n<table width=100% border=0 cellspacing=0>\n<tr bgcolor="#46566e">\n<td align=left><font color="#fefb91">Search results for <b><!-- INSERT QUERYWORDS --></b>.</font></td>\n<td align=right><font color="#fefb91"> Results <!-- INSERT PAGESTART --> to\n<!-- INSERT PAGEEND --> of <!-- INSERT MAXRESULT --></font></td>\n</tr></table><br><small>\n<!-- INSERT NAVIGATION --></small>\n<ul>\n\n';
+var template_link_string='<li><!-- INSERT LINK -->\n\n';
+var template_foot_string='</ul><small><!-- INSERT NAVIGATION --></small><br>\n</body>\n\n';
